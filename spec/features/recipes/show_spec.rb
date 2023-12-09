@@ -6,9 +6,10 @@ RSpec.describe "recipes show page", type: :feature do
     cheese = spaghet.ingredients.create!(name: "Cheese", cost: 3)
     noods = spaghet.ingredients.create!(name: "Noodles", cost: 2)
     herbals = spaghet.ingredients.create!(name: "Herbs", cost: 1)
+    sauce = spaghet.ingredients.create!(name: "Red Sauce", cost: 5)
 
     visit "/recipes/#{spaghet.id}"
-save_and_open_page
+
     expect(current_path).to eq("/recipes/#{spaghet.id}")
     expect(page).to have_content(spaghet.name)
     expect(page).to have_content(spaghet.complexity)
@@ -16,5 +17,6 @@ save_and_open_page
     expect(page).to have_content(cheese.name)
     expect(page).to have_content(noods.name)
     expect(page).to have_content(herbals.name)
+    expect(page).to have_content("Total Cost of Dish: $11")
   end
 end
