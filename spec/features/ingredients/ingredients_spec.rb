@@ -15,5 +15,8 @@ RSpec.describe "ingredients index page", type: :feature do
     expect(page).to have_content(cheese.cost)
     expect(page).to have_content(noods.cost)
     expect(page).to have_content(herbals.cost)
+    expect(page).to have_content("Cheese: 3")
+    expect(page).to have_content("Noodles: 2")
+    expect(page).to have_content("Herbs: 1")
   end
 end
