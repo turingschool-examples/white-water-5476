@@ -9,7 +9,7 @@ RSpec.describe "recipes show page", type: :feature do
     sauce = spaghet.ingredients.create!(name: "Red Sauce", cost: 5)
 
     visit "/recipes/#{spaghet.id}"
-
+  
     expect(current_path).to eq("/recipes/#{spaghet.id}")
     expect(page).to have_content(spaghet.name)
     expect(page).to have_content(spaghet.complexity)
