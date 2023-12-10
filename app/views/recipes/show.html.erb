@@ -7,4 +7,5 @@
     <% @recipe.ingredients.each do |ingredient| %>
         <li><p><%= ingredient.name %></p></li>
     <% end %>
+    <li><h3>Total Ingredient Cost: <%= @recipe.total_ingredient_cost %>
 </ul>
