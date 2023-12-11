@@ -6,4 +6,8 @@ class Ingredient < ApplicationRecord
    def total_cost
       Ingredient.select(:cost).joins(:recipes)
    end
+
+   def self.sort_alphabetically(column)
+      Ingredient.order(column)
+   end
 end
