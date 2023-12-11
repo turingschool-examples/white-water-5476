@@ -1,3 +1,5 @@
+Start 4:07PM EST
+
 # Hells Kitchen
 
 This repository requires and has been tested on Ruby v3.2.2 and is based on Rails 7.0.6.
