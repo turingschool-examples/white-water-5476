@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe " Ingredient index page" do
+RSpec.describe "Recipe show page" do
   before(:each) do 
     @f_alfredo = Recipe.create!(name: "Fetuccini Alfredo", complexity: 3, genre: "Italian")
     @chili = Recipe.create!(name: "Chili", complexity: 2, genre: "American")
@@ -20,28 +20,28 @@ RSpec.describe " Ingredient index page" do
     @sweet_potatoes = Ingredient.create!(name:"Sweet Potatoes", cost: 2)
   end
 
-    it "has an ingredient index page" do
+  it "has a recipe show page" do
 
-      #User Story 1 - Ingredients Index
-      # As a visitor,
-      # When I visit '/ingredients'
-      # I see a list of all the ingredients including their name and cost
-      # (e.g. "Ground Beef: 2"
-      #      "Salt: 4")
-      visit "/ingredients"
+    #User Story 2 - Recipes Show
+    # As a visitor,
+    # When I visit '/recipes/:id',
+    # Then I see the recipe's name, complexity and genre,
+    # and I see a list of the names of the ingredients for the recipe.
 
-      expect(page).to have_content("Chicken")
-      expect(page).to have_content("Pasta")
-      expect(page).to have_content("Pasta Sauce")
-      expect(page).to have_content("Salt")
-      expect(page).to have_content("Mushrooms")
-      expect(page).to have_content("Sweet Potatoes")
-      expect(page).to have_content(5)
-      expect(page).to have_content(7)
-      expect(page).to have_content(2)
-    end
+    visit "/recipes/#{@f_alfredo.id}"
+
+    expect(page).to have_content("Fetuccini Alfredo")
+    expect(page).to have_content(3)
+    expect(page).to have_content("Italian")
+
+    expect(page).to have_content(@pasta.name)
+    expect(page).to have_content(@pasta_sauce.name)
+    expect(page).to have_content(@salt.name)
+    expect(page).to have_content(@parmesan.name)
+    expect(page).to have_content(@mushrooms.name)
 
 
+  end
 
 
 end
