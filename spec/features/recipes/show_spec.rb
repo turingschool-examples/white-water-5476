@@ -27,4 +27,12 @@ RSpec.describe "Show Page" do
       expect(page).to have_content("Garlic Powder")
     end
   end
+
+  describe "user story 3" do
+    it "displays the total cost of all ingredients in the recipe" do
+      visit "/recipes/#{@recipe_1.id}"
+
+      expect(page).to have_content("Total Cost: #{@recipe_1.total_cost}")
+    end
+  end
 end
