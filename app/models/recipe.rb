@@ -7,4 +7,9 @@ class Recipe < ApplicationRecord
    def total_cost
       ingredients.sum(:cost)
    end
+
+   def add_ingredient_to_recipe(ingredient_id)
+      ingredient = Ingredient.find_by(id: ingredient_id)
+      self.ingredients << ingredient
+   end
 end
