@@ -25,4 +25,13 @@ RSpec.describe Recipe, type: :model do
       expect(@recipe_1.total_cost).to eq 10
     end
   end
+
+  describe "#add_ingredients" do
+    it "can find an existing ingredient by it's ID, and add it to the recipe" do
+      pasta = Ingredient.create(id: 4, name: "Pasta", cost: 2)
+      @recipe_1.add_ingredients(4)
+      expect(@recipe_1.ingredients).to eq(pasta)
+
+    end
+ end
 end

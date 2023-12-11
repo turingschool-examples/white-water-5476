@@ -23,4 +23,6 @@ RSpec.describe Ingredient, type: :model do
          expect(Ingredient.sort_alphabetically(:name)).to eq [@ingredient_2, @ingredient_3, @ingredient_1]
       end
    end
+
+
 end
