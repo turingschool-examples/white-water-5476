@@ -20,14 +20,31 @@ RSpec.describe "the recipes show" do
     
     expect(page).to have_content("Ground Beef")
     expect(page).to have_content(2)
-    expect(page).to have_content("Ground Beef")
+    expect(page).to have_content("Salt")
     expect(page).to have_content(4)
   end
 
   it "shows the total cost of all ingredients in the recipe" do
     visit "/recipes/#{@recipe.id}"
-
+    
     expect(page).to have_content("Total Cost: 6")
   end
+  
+  it "shows a form to add an ingredient to the recipe" do
+    ingredient_5 = @recipe.ingredients.create!(name: "Ground Kobe", cost: 200)
 
+    visit "/recipes/#{@recipe.id}"
+    
+    expect(page).to have_content("Add an ingredient by existing ID")
+
+    fill_in "Add an ingredient by existing ID", with: "#{ingredient_5.id}"
+    click_button("Submit")
+
+    expect(page).to have_content("Ground Beef")
+    expect(page).to have_content(2)
+    expect(page).to have_content("Salt")
+    expect(page).to have_content(4)
+    expect(page).to have_content("Ground Kobe")
+    expect(page).to have_content(200)
+  end
 end
