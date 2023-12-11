@@ -5,7 +5,7 @@ class Recipe < ApplicationRecord
 
    def total_cost
       total = 0
-      @ingredients.each do |ingredient|
+      ingredients.each do |ingredient|
          total += ingredient.cost
       end
       total
