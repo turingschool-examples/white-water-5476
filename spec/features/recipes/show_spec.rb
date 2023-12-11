@@ -48,5 +48,17 @@ RSpec.describe "Recipe show page" do
     expect(page).to have_content(@mushrooms.name)
   end
 
+  it "has a total cost of the recipe on the recipe id page" do
+    # User Story 3 - Total Cost
 
+    # As a visitor,
+    # When I visit '/recipes/:id'
+    # I see the total cost of all of the ingredients in the recipe.
+    # (e.g. "Total Cost: 22")
+
+    visit "recipes/#{@f_alfredo.id}"
+
+    expect(page).to have_content("Total Cost: 12")
+    save_and_open_page
+  end
 end

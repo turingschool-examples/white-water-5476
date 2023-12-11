@@ -2,9 +2,11 @@
 <h2><%= @recipe.genre%> </h2>
 <h3> Complexity: <%= @recipe.complexity%> </h3>
 
-<%= binding.pry %>
+<%# <%= binding.pry %> 
 
 <h3> Ingredients: </h3>
-<p> <% @recipe.ingredients.each do |ingredient|%> </p>
+<p> <% @ingredients.each do |ingredient|%> </p>
 <%= ingredient.name %>
 <%end %>
+
+<p>Total Cost: <%= @total_cost %> </p>
