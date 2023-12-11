@@ -3,11 +3,11 @@ require "rails_helper"
 RSpec.describe "recipes show" do
   before do
     @recipe = Recipe.create(name: "Spaghetti with Meatballs", complexity: 1, genre: "Italian")
-    @ingredient_1 = Ingredient.create(name: "Ground Beef", cost: 2)
-    @ingredient_2 = Ingredient.create(name: "Spices", cost: 4)
-    @ingredient_3 = Ingredient.create(name: "Pasta Sauce", cost: 6)
-    @ingredient_4 = Ingredient.create(name: "Spaghetti Noodles", cost: 4)
-    @ingredient_5 = Ingredient.create(name: "Parmesean Cheese", cost: 3)
+    @ingredient_1 = Ingredient.create!(name: "Ground Beef", cost: 2)
+    @ingredient_2 = Ingredient.create!(name: "Spices", cost: 4)
+    @ingredient_3 = Ingredient.create!(name: "Pasta Sauce", cost: 6)
+    @ingredient_4 = Ingredient.create!(name: "Spaghetti Noodles", cost: 4)
+    @ingredient_5 = Ingredient.create!(name: "Parmesean Cheese", cost: 3)
 
     @recipe.ingredients << [@ingredient_1, @ingredient_2, @ingredient_3, @ingredient_4]
   end
@@ -58,7 +58,7 @@ RSpec.describe "recipes show" do
     fill_in "Ingredient ID", with: @ingredient_5.id
 
     #And I click submit,
-    click_button 'Add ingredient'
+    click_button 'Add Ingredient'
 
     #Then I am redirrected to the recipe's show page,
     expect(current_path).to eq("/recipes/#{@recipe.id}")

@@ -2,12 +2,12 @@ require "rails_helper"
 
 RSpec.describe "Ingredients index" do
   before do
-    @recipe = Recipe.create(name: "Spaghetti with Meatballs", complexity: 1, genre: "Italian")
+    @recipe = Recipe.create!(name: "Spaghetti with Meatballs", complexity: 1, genre: "Italian")
 
-    @ingredient_1 = Ingredient.create(name: "Ground Beef", cost: 2)
-    @ingredient_2 = Ingredient.create(name: "Spices", cost: 4)
-    @ingredient_3 = Ingredient.create(name: "Pasta Sauce", cost: 6)
-    @ingredient_4 = Ingredient.create(name: "Spaghetti Noodles", cost: 4)    
+    @ingredient_1 = Ingredient.create!(name: "Ground Beef", cost: 2)
+    @ingredient_2 = Ingredient.create!(name: "Spices", cost: 4)
+    @ingredient_3 = Ingredient.create!(name: "Pasta Sauce", cost: 6)
+    @ingredient_4 = Ingredient.create!(name: "Spaghetti Noodles", cost: 4)    
 
     @recipe.ingredients << [@ingredient_1, @ingredient_2, @ingredient_3, @ingredient_4]
   end
