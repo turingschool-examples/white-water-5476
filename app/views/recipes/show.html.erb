@@ -8,3 +8,8 @@
   <% end %>
 </ul>
 <p>Total Cost: <%= @recipe.total_cost %></p>
+<%= form_with url: update_recipe_path, method: :patch do |f| %>
+  <%= f.label :ingredient_id, 'Ingredient ID:' %>
+  <%= f.number_field (:ingredient_id) %>
+  <%= f.submit "Add Ingredient" %>
+<% end %>

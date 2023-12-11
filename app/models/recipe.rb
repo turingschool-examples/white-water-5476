@@ -6,4 +6,8 @@ class Recipe < ApplicationRecord
    def total_cost
       ingredients.sum(:cost)
    end
+
+   def add_ingredients(id)
+      ingredients.create(name: Ingredient.where(id: id).pluck(:name).first, cost: Ingredient.where(id: id).pluck(:cost).first)
+   end
 end

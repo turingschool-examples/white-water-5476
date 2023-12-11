@@ -16,7 +16,9 @@ class IngredientsController < ApplicationController
   end
 
   def update
-
+    ingredient = Ingredient.create(ingredient_params)
+    ingredient.update
+    redirect_to show
   end
 
   def show
@@ -25,5 +27,11 @@ class IngredientsController < ApplicationController
 
   def destroy
 
+  end
+
+  private
+
+  def ingredient_params
+    params.permit(:name, :cost)
   end
 end

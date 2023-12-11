@@ -99,6 +99,6 @@ When I visit '/recipes/:id'
 Then I see a form to add an ingredient to this recipe.
 When I fill in a field with an existing ingredient's ID,
 And I click submit,
-Then I am redirrected to the recipe's show page,
+Then I am redirected to the recipe's show page,
 And I see the new ingredient listed for this recipe.
 ```

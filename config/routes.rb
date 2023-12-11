@@ -3,5 +3,6 @@ Rails.application.routes.draw do
 
 get "/ingredients", to: "ingredients#index"
 
-get "recipes/:id", to: "recipes#show"
+get "recipes/:id", to: "recipes#show", as: :show_recipe
+patch "recipes/:id", to: "recipes#update", as: :update_recipe
 end
