@@ -1,4 +1,10 @@
 Start 4:07PM EST
+End 6:54 PM
+
+Stephen Nash
+Reflection
+
+I felt okay with the test. I got hung up on small errors. This will allow me to add to my base of snippets, to allow me to be more consistant. Shuffling between the style I like and the style of this current project has jumbled me up a bit. I know how to do it, but I haven't done it in my own way enough to be able to be consistant. I have found that TDD is really nice in guiding each step. I would like to get quicker and not get hung up on following all the steps in order, but my intent is to use this IC as a further launching point to create a base outline so I can do it quicker. I was completly surprised at how blank my mind went when making the total_cost method, and I will need to make sure to keep my Mod 1 notes quicker to access! I got to the Extension 2, but only writing the test. It has sounded like my wife could use my help, so I wanted to get everything else done instead of completing the extension and go see to them.
 
 # Hells Kitchen
 
