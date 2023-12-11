@@ -16,14 +16,16 @@ describe "the ingredients index page" do
     expect(page).to have_content("1")
   end
 
-  it "sorts the index by last created ingredient" do
+  it "sorts the index alphabetically" do
     ground_beef = Ingredient.create(name: "Ground Beef", cost: 4)
     garlic = Ingredient.create(name: "Garlic", cost: 2)
     tomato_paste = Ingredient.create(name: "Tomato Paste", cost: 1)
     
     visit "/ingredients"
+
+    save_and_open_page
     
-    expect("Tomato Paste").to appear_before("Garlic")
+    expect("Ground Beef").to appear_before("Tomato Paste")
     expect("Garlic").to appear_before("Ground Beef")
   end
 end
