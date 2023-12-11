@@ -6,8 +6,8 @@
 <h2>Ingredients</h2>
 <ul>
   <%@recipe.ingredients.each do |ingredient| %>
-    <li><%= @ingredient.name %>
-    <li><%= @ingredient.cost %>
+    <li><%= ingredient.name %>
+    <li><%= ingredient.cost %>
     <%end%>
 </ul>
 
