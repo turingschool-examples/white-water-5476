@@ -10,3 +10,11 @@
 <%end %>
 
 <p>Total Cost: <%= @total_cost %> </p>
+
+
+
+<%= form_with url: "/recipes/#{@recipe.id}", local: true do |f| %>
+  <%= f.label "Ingredient ID:" %>
+  <%= f.text_field :add_ingredient %>
+  <%= f.submit "Add ingredient" %>
+<% end %>
