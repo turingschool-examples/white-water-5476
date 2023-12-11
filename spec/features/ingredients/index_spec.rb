@@ -8,7 +8,7 @@ RSpec.describe "the ingredients index" do
 
   it "lists all the ingredients attributes" do
     visit "/ingredients"
-save_and_open_page
+
     expect(page).to have_content(@ingredient_1.name)
     expect(page).to have_content(@ingredient_1.cost)
     expect(page).to have_content(@ingredient_2.name)
