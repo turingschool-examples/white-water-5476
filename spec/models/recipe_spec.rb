@@ -12,4 +12,21 @@ RSpec.describe Recipe, type: :model do
     it {should have_many :recipe_ingredients}
     it {should have_many(:ingredients).through(:recipe_ingredients)}
   end
+
+  describe "total_cost" do
+    it "correctly calculates total cost" do
+      @recipe = Recipe.create(name: "Spaghetti with Meatballs", complexity: 1, genre: "Italian")
+      @ingredient_1 = Ingredient.create(name: "Ground Beef", cost: 2)
+      @ingredient_2 = Ingredient.create(name: "Spices", cost: 4)
+      @ingredient_3 = Ingredient.create(name: "Pasta Sauce", cost: 6)
+      @ingredient_4 = Ingredient.create(name: "Spaghetti Noodles", cost: 4)
+      @ingredient_5 = Ingredient.create(name: "Sardines", cost: 3)
+
+      @recipe.ingredients << [@ingredient_1, @ingredient_2, @ingredient_3, @ingredient_4]
+
+      expect(@recipe.total_cost).to eq(16)
+      expect(@recipe.total_cost).to_not eq(32)
+      expect(@recipe.total_cost).to_not eq(nil)
+    end
+  end
 end
