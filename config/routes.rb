@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'recipes/show'
   get 'ingredients/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -6,4 +7,6 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   get "/ingredients", to: "ingredients#index"
+  
+  get "/recipes/:id", to: "recipes#show"
 end
