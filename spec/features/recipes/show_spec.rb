@@ -34,4 +34,12 @@ RSpec.describe "the recipe show page" do
         
         expect(page).to have_content(total_cost)
     end
+
+    it "links to ingredient add page" do
+        visit "/recipes/#{@beef_pasta.id}"
+
+        click_link("Add Ingredient to #{@beef_pasta.name}")
+
+        expect(page).to have_content("Add Ingredient to #{@beef_pasta.name}")
+    end
 end

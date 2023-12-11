@@ -22,8 +22,6 @@ describe "the ingredients index page" do
     tomato_paste = Ingredient.create(name: "Tomato Paste", cost: 1)
     
     visit "/ingredients"
-
-    save_and_open_page
     
     expect("Ground Beef").to appear_before("Tomato Paste")
     expect("Garlic").to appear_before("Ground Beef")
