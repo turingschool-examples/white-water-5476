@@ -7,7 +7,8 @@ RSpec.describe 'Ingredients Index' do
 
     visit "/ingredients"
 
-    
+    # save_and_open_page
+
     expect(page).to have_content(ingrediet1.name)
     expect(page).to have_content(ingrediet1.cost)
     
