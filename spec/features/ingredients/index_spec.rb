@@ -44,7 +44,6 @@ RSpec.describe " Ingredient index page" do
     it "has the list of ingredients in alphabetical order" do
       visit "/ingredients"
 
-      expect(page).to
 
       expect(@beans.name).to appear_before(@broth.name)
       expect(@broth.name).to appear_before(@chicken.name)
