@@ -20,5 +20,5 @@ RSpec.describe "Show Page" do
     end
 
     it "displays a list of the names of the ingredients for the recipe" do
-      visit '/recipes/:id
+      visit '/recipes/:id'
     end
