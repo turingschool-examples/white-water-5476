@@ -2,16 +2,12 @@
 <h2><%= @recipe.genre%> </h2>
 <h3> Complexity: <%= @recipe.complexity%> </h3>
 
-<%# <%= binding.pry %> 
-
 <h3> Ingredients: </h3>
-<p> <% @ingredients.each do |ingredient|%> </p>
-<%= ingredient.name %>
-<%end %>
+  <p> <% @ingredients.each do |ingredient|%> </p>
+      <p>  <%= ingredient.name %> </p>
+    <p>  <%end %> </p>
 
 <p>Total Cost: <%= @total_cost %> </p>
-
-
 
 <%= form_with url: "/recipes/#{@recipe.id}", local: true do |f| %>
   <%= f.label "Ingredient ID:" %>
