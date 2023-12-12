@@ -29,7 +29,5 @@ RSpec.describe Recipe, type: :model do
         expect(enchiladas.total_cost).to eq(16)
       end
     end
-
   end
-
 end
