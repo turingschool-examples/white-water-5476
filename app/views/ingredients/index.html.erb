@@ -1,0 +1,4 @@
+<% @ingredients.order(:name).each do |ingredient| %>
+<h3>ingredient: <%= ingredient.name%></h3>
+    <p>Cost: <%= ingredient.cost %></p>
+<% end %>

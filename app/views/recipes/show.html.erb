@@ -1,0 +1,12 @@
+<h1>Total Cost: <%=@recipe.total_cost %>  </h1>
+
+<h1><%=@recipe.name%></h1>
+<p><%=@recipe.complexity%></p>
+<p><%=@recipe.genre%></p>
+<h2>Ingredients</h2>
+
+<p> <% @recipe.ingredients.order(:name).each do |ingredient| %>
+    <h3><%= ingredient.name %></h3>
+    <p><%= ingredient.cost %></p>
+  </div>
+<% end %>
