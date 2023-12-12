@@ -1,5 +1,4 @@
-require 'rails_helper'
-RSpec.describe "Ingredients page" do 
+RSpec.describe "Ingredients page", type: :feature do 
   it "shows list of all ingredients" do 
     # before (:each) do
     Salt = Ingredient.create!(name:"Salt", cost:20)
@@ -8,7 +7,7 @@ RSpec.describe "Ingredients page" do
     Ginger =Ingredient.create!(name:'Ginger', cost:50)
   
      
-    visit "/ingredients"
+       visit "/ingredients"
     expect(page).to have_content("Salt")
     expect(page).to have_content("Ground Beef")
     expect(page).to have_content("Pepper")

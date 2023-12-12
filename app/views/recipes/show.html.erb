@@ -2,4 +2,15 @@
 
 <p>Name: <%=@recipe.name %></p>
 <p>Complexity: <%= @recipe.complexity %></p>
-<p>Genre: <%= @recipe.genre %></p>
+<p>Genre: <%= @recipe.genre %></p> 
+
+<%@recipes.each do |recipe|%>
+
+#<p>Name: <%=@recipe.name %></p>
+#<p>Complexity: <%= @recipe.complexity %></p>
+#<p>Genre: <%= @recipe.genre %></p>
+
+<div id<%= recipe.id %>>
+<%= "Total cost:#{recipe.total_cost}"%>
+</div>
+<% end %>
