@@ -16,4 +16,13 @@ RSpec.describe "the ingredients index" do
     expect(page).to have_content(item_1.cost)
     expect(page).to have_content(item_2.cost)
   end
+
+  # # Extension 1 - Ingredients Sorted Alphabetically
+  # xit "lists ingredients in alphabetically"
+  #   # When I visit '/ingredients',
+  #   visit '/ingredients'
+  #   # Then I see that the list of ingredients is sorted alphabetically by name
+    
+  #   # https://github.com/jmondo/orderly found this. Having issues getting ti to work. Ik we've done it before but I cant recal where. 
+  # end
 end

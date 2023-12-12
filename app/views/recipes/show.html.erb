@@ -5,7 +5,7 @@
 <p><%=@recipe.genre%></p>
 <h2>Ingredients</h2>
 
-<p> <% @recipe.ingredients.each do |ingredient| %>
+<p> <% @recipe.ingredients.order(:name).each do |ingredient| %>
     <h3><%= ingredient.name %></h3>
     <p><%= ingredient.cost %></p>
   </div>
