@@ -1,0 +1,10 @@
+<h1>Recipe #<%= @recipe.id %></h1>
+
+<h3>Name: <%= @recipe.name %></h3>
+<h3>Complexity: <%= @recipe.complexity %></h3>
+<h3>Genre: <%= @recipe.genre %></h3>
+
+<h2>Ingredients for Enchiladas</h2>
+<h3><% @recipe.ingredients.each do |ingredient| %></h3>
+  <h3><%=  ingredient.name %></h3>
+<% end %>
