@@ -26,7 +26,6 @@ RSpec.describe Recipe, type: :model do
     
     @recipe_ingredient_1 = RecipeIngredient.create!(recipe_id: @bowl_of_cereal.id, ingredient_id: @milk.id)
     @recipe_ingredient_2 = RecipeIngredient.create!(recipe_id: @bowl_of_cereal.id, ingredient_id: @cereal.id)
-    
     @recipe_ingredient_3 = RecipeIngredient.create!(recipe_id: @green_smoothie.id, ingredient_id: @banana.id)
     @recipe_ingredient_4 = RecipeIngredient.create!(recipe_id: @green_smoothie.id, ingredient_id: @pineapple.id)
     @recipe_ingredient_5 = RecipeIngredient.create!(recipe_id: @green_smoothie.id, ingredient_id: @spinach.id)
@@ -36,12 +35,15 @@ RSpec.describe Recipe, type: :model do
   describe "#list_of_ingredients" do
     it "can list ingredients" do
       expect(@bowl_of_cereal.list_of_ingredients).to eq([@milk, @cereal])
+
+      expect(@green_smoothie.list_of_ingredients).to eq([@banana, @pineapple, @spinach, @white_grape_juice])
     end
   end
 
   describe "#list_of_ingredient_names" do
     it "can list ingredient names" do
       expect(@bowl_of_cereal.list_of_ingredient_names).to eq(["Milk", "Cereal"])
+      expect(@green_smoothie.list_of_ingredient_names).to eq(["Banana", "Pineapple", "Spinach", "White Grape Juice"])
     end
   end
 
@@ -50,7 +52,6 @@ RSpec.describe Recipe, type: :model do
       expect(@bowl_of_cereal.total_cost).to eq(10)
       expect(@green_smoothie.total_cost).to eq(15)
     end
-
   end
 
 end
