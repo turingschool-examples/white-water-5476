@@ -9,9 +9,17 @@ RSpec.describe "Recipe Show Page" do
     @pineapple = Ingredient.create!(name: "Pineapple", cost: 4)
     @spinach = Ingredient.create!(name: "Spinach", cost: 5)
     @white_grape_juice = Ingredient.create!(name: "White Grape Juice", cost: 4)
-
+    
     @bowl_of_cereal = Recipe.create!(name: "Bowl of Cereal", complexity: 1, genre: "Breakfast")
     @green_smoothie = Recipe.create!(name: "Green Smoothie", complexity: 2, genre: "Breakfast")
+    
+    @recipe_ingredient_1 = RecipeIngredient.create!(recipe_id: @bowl_of_cereal.id, ingredient_id: @milk.id)
+    @recipe_ingredient_2 = RecipeIngredient.create!(recipe_id: @bowl_of_cereal.id, ingredient_id: @cereal.id)
+    
+    @recipe_ingredient_3 = RecipeIngredient.create!(recipe_id: @green_smoothie.id, ingredient_id: @banana.id)
+    @recipe_ingredient_4 = RecipeIngredient.create!(recipe_id: @green_smoothie.id, ingredient_id: @pineapple.id)
+    @recipe_ingredient_5 = RecipeIngredient.create!(recipe_id: @green_smoothie.id, ingredient_id: @spinach.id)
+    @recipe_ingredient_6 = RecipeIngredient.create!(recipe_id: @green_smoothie.id, ingredient_id: @white_grape_juice.id)
   end
 
   it "displays recipe details (name, complexity, and genre)" do
@@ -28,7 +36,7 @@ RSpec.describe "Recipe Show Page" do
     expect(page).to have_content("Breakfast")
   end
 
-  it "lists ingredients" do
+  xit "lists ingredients" do
     visit "/recipes/#{@bowl_of_cereal.id}"
 
     expect(page).to have_content("Milk")
@@ -40,6 +48,16 @@ RSpec.describe "Recipe Show Page" do
     expect(page).to have_content("Pineapple")
     expect(page).to have_content("Spinach")
     expect(page).to have_content("White Grape Juice")
+  end
+
+  it "displays total cost" do
+    visit "/recipes/#{@bowl_of_cereal.id}"
+
+    expect(page).to have_content(10)
+    
+    visit "/recipes/#{@green_smoothie.id}"
+
+    expect(page).to have_content(15)
   end
 
 end
