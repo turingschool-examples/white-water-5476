@@ -8,7 +8,7 @@ RSpec.describe "Ingredients Index" do
 
     # As a visitor,
     # When I visit '/ingredients'
-    visit ".ingredients"
+    visit "/ingredients"
     # I see a list of all the ingredients including their name and cost
     expect(page).to have_content("Ingredients")
     expect(page).to have_content("Ground Beef: 2")
