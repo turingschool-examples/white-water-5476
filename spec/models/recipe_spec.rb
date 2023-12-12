@@ -39,6 +39,12 @@ RSpec.describe Recipe, type: :model do
     end
   end
 
+  describe "#list_of_ingredient_names" do
+    it "can list ingredient names" do
+      expect(@bowl_of_cereal.list_of_ingredient_names).to eq(["Milk", "Cereal"])
+    end
+  end
+
   describe "#total_cost" do
     it "calculates total cost of ingredients" do
       expect(@bowl_of_cereal.total_cost).to eq(10)

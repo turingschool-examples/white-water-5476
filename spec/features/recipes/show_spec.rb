@@ -36,7 +36,7 @@ RSpec.describe "Recipe Show Page" do
     expect(page).to have_content("Breakfast")
   end
 
-  xit "lists ingredients" do
+  it "lists ingredients" do
     visit "/recipes/#{@bowl_of_cereal.id}"
 
     expect(page).to have_content("Milk")
