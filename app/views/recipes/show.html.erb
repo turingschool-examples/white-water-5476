@@ -2,4 +2,11 @@
 <p><%=@recipe.complexity%></p>
 <p><%=@recipe.genre%></p>
 <h2>Ingredients</h2>
-
+<p> <% @ecipe.ingredients.each do |ingredient| %>
+  <div id="customer-<%= customer.id %>">
+    <h3><%= ingredient.name %></h3>
+    <p><%= customer.subscribed %></p>
+    <h3><%= ingredient.name %></h3>
+    <p><%= customer.income %></p>
+  </div>
+<% end %>

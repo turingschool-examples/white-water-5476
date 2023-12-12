@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController 
   def show
-    require 'pry'; binding.pry
     @recipe = Recipe.find(params[:id])
+    require 'pry'; binding.pry
     @Item
   end
 end

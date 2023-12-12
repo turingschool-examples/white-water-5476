@@ -5,6 +5,10 @@ RSpec.describe "the recipes show" do
 
   item_1 = Ingredient.create!(name: "salt", cost: 1)
   item_2 = Ingredient.create!(name: "pepper", cost: 2)
+
+  meal.ingredients << item_1 << item_2
+  # RecipeIngredient.create!(recipe_id: meal.id, ingredient_id: item_1.id, ingredient_id: item_1.id)
+
   # User Story 2 - Recipes Show
   it "lists the the recipes attributes and  needed compenents" do
     # When I visit '/recipes/:id',
