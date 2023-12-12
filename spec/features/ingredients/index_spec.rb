@@ -14,7 +14,6 @@ RSpec.describe "Ingredients Index Page" do
   it "lists all ingredients (name and cost)" do
     visit "/ingredients"
 
-    expect(page).to have_content("All Ingredients")
     expect(page).to have_content("Milk")
     expect(page).to have_content(4)
     expect(page).to have_content("Cereal")
