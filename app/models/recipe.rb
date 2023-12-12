@@ -5,6 +5,8 @@ class Recipe < ApplicationRecord
    has_many :ingredients, through: :recipe_ingredients
 
    def total_cost
-      
+      x = self.ingredients.map do |ing|
+         ing.cost
+      end.sum
    end
 end
