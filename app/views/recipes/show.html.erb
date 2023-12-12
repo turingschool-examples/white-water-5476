@@ -6,5 +6,7 @@
 
 <h2>Ingredients for Enchiladas</h2>
 <h3><% @recipe.ingredients.each do |ingredient| %></h3>
-  <h3><%=  ingredient.name %></h3>
+  <h3><%= ingredient.name %></h3>
 <% end %>
+
+<h3>Total Cost:  <%= @recipe.total_cost%><h3>

@@ -8,8 +8,9 @@ RSpec.describe "Recipes Show" do
     ground_beef = Ingredient.create!(name: "Ground Beef", cost: 2)
     cheese = Ingredient.create!(name: "Cheese", cost: 3)
     tomatillo = Ingredient.create!(name: "Tomatillo", cost: 5)
+    tortilla = Ingredient.create!(name: "Tortilla", cost: 6)
 
-    enchiladas.ingredients << [ground_beef, cheese, tomatillo] 
+    enchiladas.ingredients << [ground_beef, cheese, tomatillo, tortilla] 
 
     # As a visitor,
     # When I visit '/recipes/:id',
@@ -26,7 +27,25 @@ RSpec.describe "Recipes Show" do
     expect(page).to have_content("Ground Beef")
     expect(page).to have_content("Cheese")
     expect(page).to have_content("Tomatillo")
+    expect(page).to have_content("Tortilla")
+  end
 
+  it "displays the total cost of all of the ingredients in the recipe" do
+    # User Story 3 - Total Cost
+    enchiladas = Recipe.create!(name: "Enchiladas", complexity: 4, genre: "Tex-Mex")
 
+    ground_beef = Ingredient.create!(name: "Ground Beef", cost: 2)
+    cheese = Ingredient.create!(name: "Cheese", cost: 3)
+    tomatillo = Ingredient.create!(name: "Tomatillo", cost: 5)
+    tortilla = Ingredient.create!(name: "Tortilla", cost: 6)
+
+    enchiladas.ingredients << [ground_beef, cheese, tomatillo, tortilla] 
+
+    # As a visitor,
+    # When I visit '/recipes/:id'
+    visit "/recipes/#{enchiladas.id}"
+    # I see the total cost of all of the ingredients in the recipe.
+    expect(page).to have_content("Total Cost: 16")
+    # (e.g. "Total Cost: 22")
   end
 end
