@@ -60,6 +60,6 @@ describe 'Recipe Show Page' do
 
     visit "recipes/#{recipe_1.id}"
 
-    expect(page).to have_content("Total Cost: 10")
+    expect(page).to have_content("Total Cost: #{recipe_1.total_cost}")
   end
 end

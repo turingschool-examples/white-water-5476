@@ -4,6 +4,6 @@ class Recipe < ApplicationRecord
    has_many :ingredients, through: :recipe_ingredients
 
    def total_cost
-   ingredients.sum(:cost)
+      ingredients.sum(:cost)
    end
 end
