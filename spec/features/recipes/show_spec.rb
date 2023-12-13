@@ -44,4 +44,20 @@ describe "As a visitor" do
         expect(page).to have_content("Ground Beef")
         expect(page).to have_content("Salt")
     end
+
+    it 'Can show burrito total cost' do
+        # When I visit '/recipes/:id','
+        visit "/recipes/#{@burrito.id}"
+
+        # I see the total cost of all of the ingredients in the recipe.
+        expect(page).to have_content(11)
+    end
+
+    it 'Can show steak total cost' do
+        # When I visit '/recipes/:id','
+        visit "/recipes/#{@steak.id}"
+
+        # I see the total cost of all of the ingredients in the recipe.
+        expect(page).to have_content(6)
+    end
 end
