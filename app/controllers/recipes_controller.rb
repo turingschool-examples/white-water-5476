@@ -1,5 +1,5 @@
-class IngredientsController < ApplicationController
+class RecipesController < ApplicationController
     def index
-        @recipe = Recipe.all
+        @recipe = Recipe.find(params[:id])
     end
 end
