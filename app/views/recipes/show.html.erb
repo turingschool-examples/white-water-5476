@@ -1,3 +1,6 @@
 <%= @recipe.name %>
-<%= @recipe.compexity %>
+<%= @recipe.complexity %>
 <%= @recipe.genre %>
+<% @recipe.ingredients.each do |i| %>
+    <%= i.name %>
+<% end %>
