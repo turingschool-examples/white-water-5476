@@ -10,6 +10,11 @@ describe "As a visitor" do
 
         @burrito = Recipe.create(name: "Burrito", complexity: 3, genre: "Mexican")
         @steak = Recipe.create(name: "Steak", complexity: 2, genre: "American")
+
+        RecipeIngredient.create(recipe: @burrito, ingredient: @beef)
+        RecipeIngredient.create(recipe: @burrito, ingredient: @tacobell)
+        RecipeIngredient.create(recipe: @steak, ingredient: @beef)
+        RecipeIngredient.create(recipe: @steak, ingredient: @salt)
     end
     
     it 'Can show burrito recipes' do
