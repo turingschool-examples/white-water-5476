@@ -7,9 +7,5 @@ class Recipe < ApplicationRecord
    def total_cost
       ingredients.sum(:cost)
    end
-
-   def ingredients_alphabetized
-      ingredients.order(:name)   
-   end
-   
+      
 end

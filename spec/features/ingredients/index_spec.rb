@@ -17,7 +17,7 @@ RSpec.describe "Ingredients Index" do
     #     "Salt: 4")
   end
 
-  xit "sorts ingredients alphabetically" do
+  it "sorts ingredients alphabetically" do
     # Extension 1 - Ingredients Sorted Alphabetically
     ground_beef = Ingredient.create!(name: "Ground Beef", cost: 2)
     cheese = Ingredient.create!(name: "Cheese", cost: 3)
@@ -32,4 +32,3 @@ RSpec.describe "Ingredients Index" do
     expect("Tomatillo").to appear_before("Tortilla")
   end
 end
-   

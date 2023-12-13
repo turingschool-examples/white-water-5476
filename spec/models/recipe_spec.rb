@@ -14,9 +14,7 @@ RSpec.describe Recipe, type: :model do
   end
 
   describe "instance methods" do
-    describe "#total_cost" do
-
-    
+    describe "#total_cost" do    
       it "adds the total cost of all ingredients per recipe" do
         enchiladas = Recipe.create!(name: "Enchiladas", complexity: 4, genre: "Tex-Mex")
 

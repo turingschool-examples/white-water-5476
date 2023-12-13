@@ -14,17 +14,14 @@ RSpec.describe Ingredient, type: :model do
 
   describe "instance methods" do
   	describe "#ingredients_alphabetized" do
-      it "alphabetizes the ingredients per recipe" do
-				enchiladas = Recipe.create!(name: "Enchiladas", complexity: 4, genre: "Tex-Mex")
+      it "alphabetizes all ingredients" do
 
 				ground_beef = Ingredient.create!(name: "Ground Beef", cost: 2)
 				cheese = Ingredient.create!(name: "Cheese", cost: 3)
 				tomatillo = Ingredient.create!(name: "Tomatillo", cost: 5)
 				tortilla = Ingredient.create!(name: "Tortilla", cost: 6)
-		
-				enchiladas.ingredients << [ground_beef, cheese, tomatillo, tortilla] 
-				
-				expect(enchiladas.ingredients_alphabetized).to eq([cheese, ground_beef, tomatillo, tortilla])
+						
+				expect(Ingredient.alphabetized).to eq([cheese, ground_beef, tomatillo, tortilla])
       end
     end
   end

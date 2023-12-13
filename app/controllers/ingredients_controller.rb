@@ -1,7 +1,6 @@
 class IngredientsController < ApplicationController
   
-  def index
-    require 'pry'; binding.pry
-    @ingredients = Ingredient.all
+  def index 
+  @ingredients = Ingredient.alphabetized
   end
 end
