@@ -1,0 +1,19 @@
+<h1><%= "#{@recipe.name}" %></h1>
+<h3>Ingredients</h3>
+<% @recipe.ingredients.each do |ingredient| %>
+  <li><%= ingredient.name %></li>
+<% end %>
+<h3>Total Cost: <%= @recipe.total_cost %></h3>
+<h3>Complexity</h3>
+<%= "#{@recipe.complexity}/10" %>
+<h3>Genre</h3>
+<%= @recipe.genre %>
+<%= form_with url: "/recipe_ingredients", method: :post, data: {turbo: false}, local: true do |f| %>
+<br>
+<br>
+  <%= f.hidden_field :recipe_id, value: @recipe.id %>
+  <%= f.label "Add ingredient" %>
+  <%= f.text_field :ingredient_id %>
+  <%= f.submit "Add" %>
+<% end %>
+
