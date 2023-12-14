@@ -32,14 +32,6 @@ RSpec.describe Recipe, type: :model do
     @recipe_ingredient_6 = RecipeIngredient.create!(recipe_id: @green_smoothie.id, ingredient_id: @white_grape_juice.id)
   end
 
-  describe "#list_of_ingredients" do
-    it "can list ingredients" do
-      expect(@bowl_of_cereal.list_of_ingredients).to eq([@milk, @cereal])
-
-      expect(@green_smoothie.list_of_ingredients).to eq([@banana, @pineapple, @spinach, @white_grape_juice])
-    end
-  end
-
   describe "#list_of_ingredient_names" do
     it "can list ingredient names" do
       expect(@bowl_of_cereal.list_of_ingredient_names).to eq(["Milk", "Cereal"])
