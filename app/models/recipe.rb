@@ -4,9 +4,7 @@ class Recipe < ApplicationRecord
    has_many :ingredients, through: :recipe_ingredients
 
    def list_of_ingredient_names
-      self.ingredients.map do |ingredient|
-         ingredient.name
-      end
+      self.ingredients.pluck(:name)
    end
 
    def total_cost
