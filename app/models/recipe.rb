@@ -3,10 +3,6 @@ class Recipe < ApplicationRecord
    has_many :recipe_ingredients
    has_many :ingredients, through: :recipe_ingredients
 
-   def list_of_ingredient_names
-      self.ingredients.pluck(:name)
-   end
-
    def total_cost
       self.ingredients.sum(:cost)
    end
