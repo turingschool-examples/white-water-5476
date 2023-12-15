@@ -14,18 +14,14 @@ RSpec.describe "Ingredients Index Page" do
   it "lists all ingredients (name and cost)" do
     visit "/ingredients"
 
-    expect(page).to have_content("Milk")
-    expect(page).to have_content(4)
-    expect(page).to have_content("Cereal")
-    expect(page).to have_content(6)
-    expect(page).to have_content("Banana")
-    expect(page).to have_content(2)
-    expect(page).to have_content("Pineapple")
-    expect(page).to have_content(4)
-    expect(page).to have_content("Spinach")
-    expect(page).to have_content(5)
-    expect(page).to have_content("White Grape Juice")
-    expect(page).to have_content(4)
+    within("#ingredients") do
+      expect(page).to have_content("#{@milk.name}: #{@milk.cost}")
+      expect(page).to have_content("#{@cereal.name}: #{@cereal.cost}")
+      expect(page).to have_content("#{@banana.name}: #{@banana.cost}")
+      expect(page).to have_content("#{@pineapple.name}: #{@pineapple.cost}")
+      expect(page).to have_content("#{@spinach.name}: #{@spinach.cost}")
+      expect(page).to have_content("#{@white_grape_juice.name}: #{@white_grape_juice.cost}")
+    end
   end
 
 end
