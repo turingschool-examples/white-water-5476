@@ -25,39 +25,39 @@ RSpec.describe "Recipe Show Page" do
   it "displays recipe details (name, complexity, and genre)" do
     visit "/recipes/#{@bowl_of_cereal.id}"
 
-    expect(page).to have_content("Bowl of Cereal")
-    expect(page).to have_content("1")
-    expect(page).to have_content("Breakfast")
+    expect(page).to have_content("#{@bowl_of_cereal.name}")
+    expect(page).to have_content("Complexity: #{@bowl_of_cereal.complexity}")
+    expect(page).to have_content("Genre: #{@bowl_of_cereal.genre}")
 
     visit "/recipes/#{@green_smoothie.id}"
 
-    expect(page).to have_content("Green Smoothie")
-    expect(page).to have_content("2")
-    expect(page).to have_content("Breakfast")
+    expect(page).to have_content("#{@green_smoothie.name}")
+    expect(page).to have_content("#{@green_smoothie.complexity}")
+    expect(page).to have_content("#{@green_smoothie.genre}")
   end
 
   it "lists ingredients" do
     visit "/recipes/#{@bowl_of_cereal.id}"
 
-    expect(page).to have_content("Milk")
-    expect(page).to have_content("Cereal")
+    expect(page).to have_content("#{@bowl_of_cereal.ingredients.first.name}")
+    expect(page).to have_content("#{@bowl_of_cereal.ingredients.second.name}")
     
     visit "/recipes/#{@green_smoothie.id}"
 
-    expect(page).to have_content("Banana")
-    expect(page).to have_content("Pineapple")
-    expect(page).to have_content("Spinach")
-    expect(page).to have_content("White Grape Juice")
+    expect(page).to have_content("#{@green_smoothie.ingredients.first.name}")
+    expect(page).to have_content("#{@green_smoothie.ingredients.second.name}")
+    expect(page).to have_content("#{@green_smoothie.ingredients.third.name}")
+    expect(page).to have_content("#{@green_smoothie.ingredients.fourth.name}")
   end
 
   it "displays total cost" do
     visit "/recipes/#{@bowl_of_cereal.id}"
 
-    expect(page).to have_content(10)
+    expect(page).to have_content("Total Cost: $#{@bowl_of_cereal.total_cost}")
     
     visit "/recipes/#{@green_smoothie.id}"
 
-    expect(page).to have_content(15)
+    expect(page).to have_content("Total Cost: $#{@green_smoothie.total_cost}")
   end
 
 end
