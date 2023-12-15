@@ -4,10 +4,12 @@
 <p> Complexity: <%= @recipe.complexity %></p>
 <p> Genre: <%= @recipe.genre %></p>
 
-<p> Ingredients:</p>
-<ul>
-  <% @recipe.ingredients.each do |ingredient| %>
-    <li><%= ingredient.name %></li>
-  <% end %>
-</ul>
+<section id="ingredients">
+  <p> Ingredients:</p>
+  <ul>
+    <% @recipe.ingredients.each do |ingredient| %>
+      <li><%= ingredient.name %></li>
+    <% end %>
+  </ul>
+</section>
 <p> Total Cost: $<%= @recipe.total_cost %></p>

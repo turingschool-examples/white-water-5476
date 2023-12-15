@@ -39,15 +39,19 @@ RSpec.describe "Recipe Show Page" do
   it "lists ingredients" do
     visit "/recipes/#{@bowl_of_cereal.id}"
 
-    expect(page).to have_content("#{@bowl_of_cereal.ingredients.first.name}")
-    expect(page).to have_content("#{@bowl_of_cereal.ingredients.second.name}")
+    within("#ingredients") do
+      expect(page).to have_content("#{@bowl_of_cereal.ingredients.first.name}")
+      expect(page).to have_content("#{@bowl_of_cereal.ingredients.second.name}")
+    end
     
     visit "/recipes/#{@green_smoothie.id}"
 
-    expect(page).to have_content("#{@green_smoothie.ingredients.first.name}")
-    expect(page).to have_content("#{@green_smoothie.ingredients.second.name}")
-    expect(page).to have_content("#{@green_smoothie.ingredients.third.name}")
-    expect(page).to have_content("#{@green_smoothie.ingredients.fourth.name}")
+    within("#ingredients") do
+      expect(page).to have_content("#{@green_smoothie.ingredients.first.name}")
+      expect(page).to have_content("#{@green_smoothie.ingredients.second.name}")
+      expect(page).to have_content("#{@green_smoothie.ingredients.third.name}")
+      expect(page).to have_content("#{@green_smoothie.ingredients.fourth.name}")
+    end
   end
 
   it "displays total cost" do
